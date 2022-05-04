@@ -12,6 +12,9 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        """
+        Initializes the server
+        """
         self.__dataset = None
 
     def dataset(self) -> List[List]:
@@ -26,6 +29,14 @@ class Server:
         return self.__dataset
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+        """
+        This returns a dictionary with the following keys:
+        - total_pages: the total number of pages
+        - current_page: the current page
+        - next_page: the next page
+        - previous_page: the previous page
+        - data: the data within the current page
+        """
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
         next_page = page + 1 if page < total_pages else None
@@ -40,6 +51,9 @@ class Server:
         }
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        This returns a list of results within a range of indexes
+        """
         assert type(page) is int and page > 0
         assert type(page_size) is int and page_size > 0
         range_ = index_range(page, page_size)

@@ -26,6 +26,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        This returns a list of results within a range of indexes
+        """
         assert type(page) is int and page > 0
         assert type(page_size) is int and page_size > 0
         range_ = index_range(page, page_size)
@@ -33,7 +36,7 @@ class Server:
         len_ds = len(data_set)
         if len_ds < range_[0]:
             return []
-        elif len_ds < range_[1]:
+        elif len_ds < range_[1] and len_ds > range_[0]:
             return data_set[range_[0]:]
         elif len_ds >= range_[1]:
             return data_set[range_[0]:range_[1]]
