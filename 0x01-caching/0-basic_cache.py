@@ -6,6 +6,9 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """
+    This class demonstrates basic caching
+    """
 
     def put(self, key, item):
         """updates cache_data with item"""

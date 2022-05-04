@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 """
 This module demonstrates caching using
-FIFO Algorithm.
+LIFO Algorithm.
 """
 from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
-
     """
     This class demonstartes caching using
-    FIFO Algorithm.
+    LIFO Algorithm.
     """
 
     def __init__(self):
@@ -21,13 +20,13 @@ class FIFOCache(BaseCaching):
         self._track = []
 
     def put(self, key, item):
-        """updates cache_data with item using FIFO"""
+        """updates cache_data with item using LIFO"""
         can_pop = key not in self.cache_data
         max_out = len(self.cache_data) >= self.MAX_ITEMS
         if can_pop and max_out:
-            del self.cache_data[self._track[0]]
-            print('DISCARD: {}'.format(self._track[0]))
-            self._track.remove(self._track[0])
+            _item = self._track.pop()
+            del self.cache_data[_item]
+            print('DISCARD: {}'.format(_item))
         if key and item:
             self._track.append(key)
             self.cache_data[key] = item
