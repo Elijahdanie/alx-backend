@@ -14,5 +14,5 @@ def index_range(page: int, page_size: int) -> Tuple:
     """
     start = page - 1 * page_size
     start = start if start > 0 else 0
-    end = start + page_size
+    end = page * page_size
     return (start, end)
