@@ -3,7 +3,7 @@
 from typing import Tuple
 
 
-def index_range(page: int, page_size: int)-> Tuple:
+def index_range(page: int, page_size: int) -> Tuple:
     """
     This returns a range of indexes with
     start and end indexes used to access
