@@ -12,7 +12,4 @@ def index_range(page: int, page_size: int) -> Tuple:
     start and end indexes used to access
     a list of data
     """
-    start = page - 1 * page_size
-    start = start if start > 0 else 0
-    end = page * page_size
-    return (start, end)
+    return ((page - 1 * page_size), (page * page_size))
