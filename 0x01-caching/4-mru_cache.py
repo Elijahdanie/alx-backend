@@ -30,7 +30,7 @@ class MRUCache(BaseCaching):
             del self.cache_data[_item]
             self._track.remove(_item)
         if key and item:
-            if key not in self.cache_data:
+            if key not in self._track:
                 self._track.append(key)
             self.cache_data[key] = item
 
