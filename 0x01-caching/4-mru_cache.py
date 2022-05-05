@@ -23,7 +23,7 @@ class MRUCache(BaseCaching):
         Updates the cache_data with item using
         MRU algorithm
         """
-        can_pop = key not in self.cache_data
+        can_pop = key not in self._track
         max_out = len(self.cache_data) >= self.MAX_ITEMS
         if can_pop and max_out:
             _item = self._track.pop()
