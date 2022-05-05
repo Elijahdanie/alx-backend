@@ -6,6 +6,7 @@ This module demonstrates MRU caching
 
 from base_caching import BaseCaching
 
+
 class MRUCache(BaseCaching):
     """
     This class demonstrates MRU caching
