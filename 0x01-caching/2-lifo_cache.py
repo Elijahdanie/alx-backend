@@ -6,7 +6,7 @@ LIFO Algorithm.
 from base_caching import BaseCaching
 
 
-class FIFOCache(BaseCaching):
+class LIFOCache(BaseCaching):
     """
     This class demonstartes caching using
     LIFO Algorithm.
