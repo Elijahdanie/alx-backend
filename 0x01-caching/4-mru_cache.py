@@ -25,11 +25,11 @@ class MRUCache(BaseCaching):
         MRU algorithm
         """
         can_pop = key not in self._track
-        max_out = len(self.cache_data) >= self.MAX_ITEMS
+        max_out = len(self.cache_data) == self.MAX_ITEMS
         if can_pop and max_out:
             _item = self._track.pop()
             del self.cache_data[_item]
-            self._track.remove(_item)
+            print('DISCARD: {}'.format(_item))
         if key and item:
             if key not in self._track:
                 self._track.append(key)
