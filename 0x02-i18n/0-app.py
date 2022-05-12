@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-
+"""
+Module demonstrates a flask app
+"""
 from flask import Flask, render_template
 
 app = Flask(__name__, static_url_path='')
 
 
-app.route('/', methods=['GET'], strict_slashes=False)
+@app.route('/', methods=['GET'], strict_slashes=False)
 def root():
     """"
     Root end point
